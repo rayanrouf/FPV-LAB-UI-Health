@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to COGGAMES</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+    
+
+    <div class="menu-container">
+        <h1>Welcome to COG-GAMES by the FPV Lab at UIC</h1>
+        <p>Select a game to play:</p>
+        <div class="toggle-container">
+            <label class="toggle-switch">
+                <input type="checkbox" id="camToggle" onchange="toggleCameraVisibility()">
+                <span class="slider round"></span>
+            </label>
+            <span class="toggle-label">Click this to see yourself play the games on screen!</span>
+        </div>
+        <div class="game-links">
+            <button onclick="location.href='CogGames/Instruction Page/instructions.html'" class="game-link">Instructions</button>
+            <button onclick="location.href='CogGames/Apple Catcher/index.html'" class="game-link">Play Apple Catcher</button>
+            <button onclick="location.href='CogGames/Math Game/indexmath.html'" class="game-link">Play Math Cloud</button>
+            <button onclick="location.href='CogGames/Lol2/lol2.html'" class="game-link">Play Candy Matcher</button>
+            <button onclick="location.href='CogGames/Dot Game/dot.html'" class="game-link">Play Dot Follower</button>
+         </div>
+    </div>
+    <script src="scriptmath.js"></script>
+</body>
+</html>

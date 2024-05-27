@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+body, html {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+  }
+
+  header, main, footer, #game-area {
+    background: transparent;
+}
+
+  
+  #game-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(to bottom, #87CEEB 0%, #87CEEB 70%, #4CAF50 70%, #4CAF50 100%); /* Simulating the sky */
+  }
+  
+  header {
+    text-align: center;
+    padding: 1rem;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  #score-area {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    z-index: 20;
+  }
+
+  #game-area {
+    position: relative;
+    width: 100%;
+    height: 90vh; /* Or whatever height you want */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden; /* To keep everything contained within the game area */
+    background: linear-gradient(to bottom, #87CEEB 0%, #87CEEB 35%, #87CEEB 70%, #4CAF50 70%, #4CAF50 100%); /* Simulating the sky */;
+  }
+  
+  #target-fruit-area {
+    position: absolute;
+    top: 20px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 1.2rem;
+    color: #000; /* Or choose a color that stands out */
+    text-align: center;
+}
+
+  
+  main {
+    width: 100%;
+    height: calc(100% - 60px); /* Adjust height accounting for header/footer */
+    position: relative;
+    background: transparent;
+  }
+  
+  #webcam {
+    position: fixed;
+    top: 50%;  /* Center vertically */
+    right: 10px;  /* Position to the right */
+    width: 250px; /* Set a fixed width */
+    height: 200px; /* Set a fixed height */
+    object-fit: cover;
+    z-index: 100; /* Ensure it's above other elements */
+    transform: translateY(-50%); /* Adjust positioning to be truly centered vertically */
+}
+  
+  #game-canvas {
+    width: 100%;
+    height: 100%;
+  }
+  
+  #basket {
+    position: absolute;
+    bottom: 30px; /* Adjust based on actual basket height */
+    left: 50%;
+    width: 100px;
+    height: 50px;
+    background: rgb(201, 95, 14); /* Basket color */
+    transform: translateX(-50%);
+    border: 2px solid #000; /* Add a black border for visibility */
+    z-index: 10; /* Ensure it's above other elements */
+  }
+
+  #final-score, #restart-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: none; /* Keep this as initial state */
+    margin-bottom: 20px;
+}
+
+#final-score {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #000; /* Or any color that stands out on your background */
+}
+
+#restart-button {
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    background: #006400;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 100px;
+}
+
+
+  
+ footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 1rem;
+    background: #fff;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+}
+
+  
+  button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background: #ff9800; /* Orange color */
+    color: white;
+    border: 1px solid #ffa726;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background: #388E3C; /* Darker green */
+}
+
+/* Styles for falling fruits */
+.fruit {
+    position: absolute;
+    width: 50px; /* Size of the fruit */
+    height: 50px; /* Size of the fruit */
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* Initial off-screen top position */
+    top: -60px;
+    z-index: 200;
+  }
+
+  
+  .apple { background-image: url('Images/AppleImage.png'); }
+  .banana { background-image: url('Images/BananaImage.png'); }
+  .orange { background-image: url('Images/OrangeImage.png'); }
+  .strawberry { background-image: url('Images/StrawberryImage.png'); }
+  .watermelon { background-image: url('Images/WatermelonImage.png'); }
+  
+  /* ... any additional styles ... */
+
+  .difficulty-button.selected {
+    background-color: #4CAF50; /* Green background for selected difficulty */
+    color: white;
+    border: none;
+}
+
+#back-button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background: #ff9800; /* Orange color */
+  color: white;
+  border: 1px solid #ffa726;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  cursor: pointer;
+  /* Adjust position as necessary */
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.welcome-message {
+  text-align: center;
+  margin: 20px auto;
+  font-size: 1rem;
+  color: #000;
+  max-width: 600px; /* Adjust as needed */
+  padding: 10px;
+}
+
+  .hidden {
+    display: none;
+  }
+  

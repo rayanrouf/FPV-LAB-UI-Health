@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fruit Catch Game</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils"></script>
+</head>
+<body>
+  <div id="game-container">
+    <header>
+      <div id="game-title"><h1>Fruit Catch Game</h1></div> 
+      <div id="score-area">Score: <span id="score">0</span></div>
+      <div id="game-area">
+      <button id="back-button" style="position: absolute; top: 10px; left: 10px;">Back</button>
+
+        <!-- Fruits will be dynamically inserted here -->
+      </div>
+      
+    </header>
+    <main>
+      <video id="webcam" autoplay hidden></video>
+      <canvas id="game-canvas"></canvas>
+    </main>
+    <div id="basket" class="hidden"></div>
+    <div id="target-fruit-area" class="hidden">
+        Catch the: <span id="target-fruit"></span></div>
+        <div id="final-score" style="display: none;">
+          Good Job! Your final score is: <span id="final-score-value">0</span><br>
+          Correct Fruits Caught: <span id="correct-hits">0</span><br>
+          Incorrect Fruits Caught: <span id="incorrect-hits">0</span>
+        </div>
+        <button id="restart-button" style="display: none;">Go Back to Start Screen</button>
+
+    <footer>
+      <button id="start-button">Start Game</button>
+        <button id="start-button" class="hidden">Start Game</button>
+        <button onclick="location.href='instructapple.html'" class="game-link">Instructions</button>
+        <button class="difficulty-button" data-difficulty="easy">Easy</button>
+        <button class="difficulty-button" data-difficulty="medium">Medium</button>
+        <button class="difficulty-button" data-difficulty="hard">Hard</button>
+        
+      
+    </footer>
+  </div>
+<script src="script.js"></script>
+</body>
+</html>

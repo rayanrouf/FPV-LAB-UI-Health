@@ -1,0 +1,193 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(135deg, #ff9a9e 10%, #fad0c4 50%, #fad0c4 50%, #fecd95 100%);
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+/* Webcam Styles */
+#webcam {
+    position: fixed;
+    top: 50%;  /* Center vertically */
+    right: 10px;  /* Position to the right */
+    width: 250px; /* Set a fixed width */
+    height: 200px; /* Set a fixed height */
+    object-fit: cover;
+    z-index: 100; /* Ensure it's above other elements */
+    transform: translateY(-50%); /* Adjust positioning to be truly centered vertically */
+}
+
+/* Pointer Style */
+#pointer {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ff4757;
+    z-index: 120;
+    box-shadow: 0 0 10px #ff6b81;
+}
+
+/* Corner Boxes Style */
+.corner-box {
+    position: absolute;
+    width: 200px;
+    height: 120px;
+    background-color: #5da4ef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    font-size: 2rem;
+    color: #70a1ff;
+    font-weight: bold;
+    background-image: url('cloud2.png');
+    background-size: cover;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    z-index: 3;
+}
+
+.corner-box:hover {
+    transform: scale(1.1);
+}
+
+/* Positioning Boxes */
+#box-top-left { top: 10vh; left: 10vw; }
+#box-top-right { top: 10vh; right: 10vw; }
+#box-bottom-left { bottom: 10vh; left: 10vw; }
+#box-bottom-right { bottom: 10vh; right: 10vw; }
+
+/* Score and Question Display */
+#score-display, #question-display, #feedback-display {
+    position: absolute;
+    background-color: #ffffff;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 3;
+}
+
+#score-display {
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+}
+
+#question-display {
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.5rem;
+}
+
+#feedback-display {
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    font-style: italic;
+    color: #2ed573;
+}
+
+/* Landing Page and Buttons */
+#landing-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+#landing-page button {
+    margin: 20px;
+    padding: 15px 30px;
+    background-color: #ff6348;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+#landing-page button:hover {
+    background-color: #ff4757;
+    transform: translateY(-3px);
+}
+
+/* Restart Button Styling */
+.restart-button-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+#restart-game {
+    padding: 20px 40px;
+    background-color: #ff6348;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#restart-game:hover {
+    background-color: #ff4757;
+    transform: translateY(-5px) translateX(-50%);
+}
+
+/* Game Container Visibility */
+#game-container {
+    position: relative;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.show {
+    display: flex !important;
+}
+
+/* Round Instruction Style */
+#round-instruction {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    background-color: #996ad2;
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    font-size: 1.7rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    text-align: center;
+}

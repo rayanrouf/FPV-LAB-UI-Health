@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Movement Tracking</title>
+    <link rel="stylesheet" href="stylesmath.css">
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils"></script>
+</head>
+
+
+<body>
+    <div id="landing-page">
+        <h2>Welcome to the Math Game! Choose your difficulty level.</h2>
+        <button onclick="location.href='instructmath.html'" class="game-link">Instructions</button>
+        <button id="easy">Easy</button>
+        <button id="medium">Medium</button>
+        <button id="hard">Hard</button>  
+        <button id="calibrate">Calibrate</button>
+
+    </div> 
+    
+    <div id="game-container">
+        <div id="pointer"></div>
+        <div id="box-top-left" class="corner-box"></div>
+        <div id="box-top-right" class="corner-box"></div>
+        <div id="box-bottom-left" class="corner-box"></div>
+        <div id="box-bottom-right" class="corner-box"></div>
+        <!-- Score Display -->
+        <div id="score-display">Score: <span id="score">0</span></div>
+        <!-- Math Question Display -->
+        <div id="question-display">2 + 2 = ?</div>
+        <!-- Feedback Display -->
+        <div id="feedback-display"></div>
+        <div class="restart-button-container">
+            <button id="restart-game" style="display: none;">Restart</button>
+        </div>
+
+        <div id="round-instruction" style="display: none;"></div>
+    </div>
+    
+
+
+
+    <video id="webcam" style="display: none;"></video>
+    <script src="scriptmath.js"></script>
+</body>
+</html>

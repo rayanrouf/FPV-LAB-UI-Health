@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pointer Pose Game</title>
+    <link rel="stylesheet" href="dot.css">
+</head>
+<body>
+    <div id="start-screen">
+        <h1>Welcome to the Dot Follower Game</h1>
+        <button onclick="location.href='instructdot.html'" class="game-link">Instructions</button>
+        <button id="easy">Easy</button>
+        <button id="medium">Medium</button>
+        <button id="hard">Hard</button>
+    </div>
+
+    <div id="end-game" style="display: none;">
+        <div id="final-score">Well done, your score is: <span id="final-score-value">0</span></div>
+        <button id="main-menu-button">Main Menu</button>
+        <button id="continue-button">Continue</button> <!-- Adding this line for continue game functionality -->
+    </div>
+    
+
+    <div id="game-container" style="display:none;">
+        <div id="circle"></div>
+        <div id="score-box">Score: <span id="score">0</span></div>
+        <video id="webcam" style="display: none;"></video>
+        <div id="pointer"></div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils"></script>
+    <script src="dot.js"></script>
+</body>
+</html>
